@@ -5,11 +5,13 @@ const mongoose = require("mongoose");
 
 const app = express()
 
-app.set("view engine","ejs")
+app.set("views engine","ejs")
 app.set("views",path.join(__dirname,"views"))
 app.engine("ejs",ejsMate)
 
-
+app.get('/',(req,res)=>{
+    res.render("home")
+})
 app.listen(4600, ()=>{
     console.log("serving on port 4600")
 })
